@@ -29,6 +29,7 @@ h1 {
 }
 
 .portrait::before {
+  content: attr(data-text);
   font-size: 0.75em;
   text-transform: uppercase;
 }
@@ -36,8 +37,4 @@ h1 {
 .portrait::after {
   font-size: 1.125em;
   font-weight: 700;
-}
-
-.portrait::after {
-  content: attr(data-text);
 }
