@@ -26,15 +26,44 @@ h1,
 h1 {
   font-weight: bold;
   font-size: 2em;
+  padding: 0.5em;
+}
+
+img {
+  width: 100%;
+}
+
+.sub-header {
+  padding: 0 1em;
+  width: 80%;
+}
+
+.portrait {
+  position: relative;
+  margin: 2rem 0;
+  width: 138px;
+}
+
+.portrait::before,
+.portrait::after {
+  position: absolute;
 }
 
 .portrait::before {
-  content: attr(data-text);
+  content: attr(data-position);
   font-size: 0.75em;
   text-transform: uppercase;
+  top: 0;
+  left: 138px;
+  transform: rotate(90deg) translateY(50%);
+  transform-origin: 10% 100%;
+  width: 100%;
 }
 
 .portrait::after {
+  content: attr(data-name);
   font-size: 1.125em;
   font-weight: 700;
+  top: 100%;
+  left: 0;
 }
