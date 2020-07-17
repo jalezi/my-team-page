@@ -18,6 +18,12 @@ body {
   font-family: var(--fontFamily01);
 }
 
+footer {
+  font-size: small;
+  margin: 5em auto;
+  text-align: center;
+}
+
 h1,
 .portrait::before {
   font-family: var(--fontFamily02);
@@ -29,19 +35,46 @@ h1 {
   padding: 0.5em;
 }
 
+h2 {
+  font-weight: 600;
+  font-size: 1.125em;
+  margin-bottom: 0.5em;
+}
+
 img {
   width: 100%;
 }
 
+.content {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 370px;
+}
+
+.header {
+  width: 100%;
+  margin: 0 auto;
+}
+
 .sub-header {
-  padding: 0 1em;
-  width: 80%;
+  padding: 0 1em 2em;
+  width: 100%;
+  font-size: 1.125em;
+}
+
+.team-container {
+  margin: 0 auto;
+  max-width: 350px;
+}
+
+.team-container > div {
+  margin: 0 auto 2em;
 }
 
 .portrait {
   position: relative;
-  margin: 2rem 0;
-  width: 138px;
+  margin: 0 1rem;
+  width: 200px;
 }
 
 .portrait::before,
@@ -54,9 +87,9 @@ img {
   font-size: 0.75em;
   text-transform: uppercase;
   top: 0;
-  left: 138px;
+  left: 200px;
   transform: rotate(90deg) translateY(50%);
-  transform-origin: 10% 100%;
+  transform-origin: 10% 120%;
   width: 100%;
 }
 
@@ -66,4 +99,85 @@ img {
   font-weight: 700;
   top: 100%;
   left: 0;
+}
+
+@media screen and (min-width: 375px) {
+  .team-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .team-container > div:nth-child(odd) {
+    align-self: flex-start;
+    margin-bottom: 5em;
+  }
+
+  .team-container > div:nth-child(even) {
+    align-self: flex-end;
+    margin-bottom: 2em;
+  }
+
+  .portrait {
+    width: 138px;
+  }
+
+  .portrait::before {
+    left: 138px;
+    transform-origin: 10% 100%;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .content {
+    max-width: 1024px;
+  }
+
+  .header {
+    width: 85%;
+    margin: 4em auto;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .header > h1,
+  .sub-header {
+    margin: 0;
+    padding: 0;
+  }
+
+  .header > h1 {
+    display: inline-block;
+  }
+
+  .sub-header {
+    display: inline-block;
+    max-width: 370px;
+  }
+
+  .team-container {
+    max-width: 670px;
+    justify-content: space-between;
+  }
+
+  .team-container > div:nth-child(2n + 1) {
+    align-self: flex-start;
+    margin-top: 0;
+    margin-bottom: 1em;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .team-container > div:nth-child(3n + 2) {
+    align-self: flex-start;
+    margin-top: 5em;
+    margin-bottom: 1em;
+    margin-right: 4em;
+    margin-left: 4em;
+  }
+
+  .team-container > div:nth-child(2n + 4) {
+    align-self: flex-start;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
 }
